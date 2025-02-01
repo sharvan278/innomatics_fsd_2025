@@ -6,23 +6,28 @@
     <title>Personal Budget Tracker</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
             background-color: rgb(227, 219, 219);
+            text-align: center;
         }
-        table,td {
+        table, td {
             text-align: left;
         }
         th {
             text-align: center;
         }
+        nav ul {
+            padding: 0;
+        }
     </style>
 </head>
-<body align="center">
+<body>
     <header>
         <h1>Personal Budget Tracker</h1>
         <nav>
-            <a href="#">Add Income/Expense</a><br>
-            <a href="#">View Budget Summary</a>
+            <ul>
+                <li><a href="#">Add Income/Expense</a></li>
+                <li><a href="#">View Budget Summary</a></li>
+            </ul>
         </nav>
     </header>
     <section>
@@ -34,9 +39,10 @@
     <form>
         <h1>Add New Income or Expense</h1>
         <label for="amount">Amount: </label>
-        <input type="text" name="amount"><br><br
+        <input type="text" id="amount" name="amount"><br><br>
+        
         <label for="category">Category</label>
-        <select name="category">
+        <select id="category" name="category">
             <option value="Food">Food</option>
             <option value="Transportation">Transportation</option>
             <option value="Entertainment">Entertainment</option>
@@ -45,18 +51,24 @@
             <option value="Utilities">Utilities</option>
             <option value="Housing">Housing</option>
         </select><br><br>
+
         <label for="description">Description</label>
-        <input type="text" name="description"><br><br>
+        <input type="text" id="description" name="description"><br><br>
+
         <label for="date">Date</label>
-        <input type="date" name="date"><br><br>
+        <input type="date" id="date" name="date"><br><br>
+
         <label for="type">Type</label>
-        <input type="radio" name="type" value="income">Income
-        <input type="radio" name="type" value="expense">Expense<br><br>
+        <input type="radio" id="income" name="type" value="income">
+        <label for="income">Income</label>
+        <input type="radio" id="expense" name="type" value="expense">
+        <label for="expense">Expense</label><br><br>
+
         <input type="submit" value="Add Entry"><br><br>
     </form>
+
     <table border="1" align="center">
-        <caption><b>Budget Summary</b></caption>
-        <br>
+        <h2>Budget Summary</h2>
         <thead>
             <tr>
                 <th rowspan="2">Category</th>
@@ -132,8 +144,11 @@
                 <td><button>Edit</button> <button>Delete</button></td>
             </tr>
         </tbody>
-    </table><hr    
+    </table>
+    <hr>
+
     <footer>
         <p>Personal Budget Tracker - Version 1.0</p>
+    </footer>
 </body>
 </html>
