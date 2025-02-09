@@ -1,0 +1,197 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #242418;
+    color: #3e2723;
+}
+h2{
+    color: #d7a86e;
+}
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #191311;
+    color: #fff;
+}
+.logo {
+    background-image: url('https://foodpages.ca/itemimmgs/150032_BrewedAwakenings_.jpg');
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    background-size: cover;
+}
+nav {
+    background-color: #191311;
+    padding: 20px;
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+    padding-right: 20px;
+}
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+}
+.hero {
+    margin-top: 160px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: url('https://images.wallpaperscraft.com/image/single/coffee_cappuccino_cup_136699_3840x2400.jpg')
+      no-repeat center center;
+    background-size: cover;
+    color: #fff;
+    text-align: center;
+}
+.hero-content {
+    padding: 20px;
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #d7a86e;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 18px;
+}
+.menu-items {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+.menu-card {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 300px;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.menu-card:hover {
+    transform: translateY(-10px); 
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+.menu-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+.menu-card:hover img {
+    transform: scale(1.05); 
+}
+
+#menu h2 {
+    text-align: center;
+    margin-top: 40px;
+}
+.about-section {
+    padding: 60px 20px;
+    color:white;
+    border-radius: 10px; 
+}
+.about-content h2 {
+    font-size: 2.5rem; 
+    margin-bottom: 20px;
+}
+.about-content p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    
+}
+#contact {
+    background: url('https://th.bing.com/th/id/R.2e656c7f6438f2e96d38af8772b0d3a0?rik=sYznGS0gRYi7rw&riu=http%3a%2f%2fcafedesire.co.in%2fimages%2fservices-page%2fcontact_us.jpg&ehk=PcV%2b2qEfGUI4wQOYr46cTjbWZeM%2bfTXPUO%2f1NXQmKfM%3d&risl=&pid=ImgRaw&r=0') 
+        no-repeat center center;
+    background-size: cover;
+    padding: 40px;
+    border-radius: 10px;
+    color: #3e2723;
+    text-align: center;
+}
+
+.contact-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+label{
+    color: #d7a86e;
+}
+
+input {
+    width: 100%;
+    max-width: 400px;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+button {
+    padding: 12px;
+    background-color: #d7a86e;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+footer {
+    text-align: center;
+    color: #d7a86e;
+    height: 75px;
+    padding: 10px;
+}
+
+@media (max-width: 768px) {
+    .menu-card {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-section,
+    #contact {
+        padding: 30px 10px;
+    }
+    h2 {
+        font-size: 2rem;
+    }
+    input,
+    textarea {
+        font-size: 0.9rem;
+    }
+    button {
+        padding: 10px;
+    }
+}
+

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="marks">Marks</label>
+    <input type="number" id="marks" name="marks" placeholder="Enter student marks" required>
+    <br><br>
+    <label for="attendance">Attendance</label>
+    <input type="number" id="attendance" name="attendance" placeholder="Enter student attendance" required>
+    <br><br>
+    <button type="button" onclick="calculateGrade()">Calculate Grade</button>
+    <h3>Summary:</h3>
+    <p id="output"></p>
+    <script>
+        function calculateGrade() {
+            let marks = document.getElementById('marks').value;
+            let attendance = document.getElementById('attendance').value;
+            let grade = '';
+            if(attendance > 90){
+                marks += 5;
+            }
+            if(marks >= 90){
+                grade = 'A';
+            } else if(marks >= 80 && marks <=89){
+                grade = 'B';
+            } else if(marks >= 70 && marks <=79){
+                grade = 'C';
+            } else if(marks >= 60 && marks <=69){
+                grade = 'D';
+            } else {
+                grade = 'F';
+            }
+            // alert(`Grade: ${grade}`);
+            document.getElementById('output').innerHTML = `Grade: ${grade}`;
+        }
+    </script>
+</body>
+</html>

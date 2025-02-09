@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Ticket Booking System</title>
+</head>
+<body>
+    <h2>Flight Ticket Booking System</h2>
+    <label for="classType">Select your Class: </label>
+    <select name="classType" id="classType">
+        <option value="base class">Base Class</option>
+        <option value="first class">First Class</option>
+        <option value="business">Business</option>
+    </select>
+    <br><br>
+    <label for="luggage">Luggage Weight: </label>
+    <input type="number" id="luggage" name="luggage" required>
+    <br><br>
+    <label for="student">Are you a Student</label>
+    <input type="checkbox" id="student" name="student" onclick="toggleCheckbox('student')" required>
+    <br><br>
+    <label for="senior">Are you a Senior Citizen</label>
+    <input type="checkbox" id="senior" name="senior" onclick="toggleCheckbox('senior')" required>
+    <br><br>
+    <button onclick="calculateFlightFare()">Get Ticket Price</button>
+    <h3>Total Fare :</h3>
+    <p id="output"></p>
+    <script>
+        function toggleCheckbox(checkboxId) {
+            var checkbox = document.getElementById(checkboxId);
+            if(checkboxId === "student"){
+                document.getElementById("senior").checked = false;
+            } else {
+                document.getElementById("student").checked = false;
+            }
+        }
+        function calculateFlightFare() {
+            var classType = document.getElementById("classType").value;
+            var luggage = parseInt(document.getElementById("luggage").value);
+            var student = document.getElementById("student").checked;
+            var senior = document.getElementById("senior").checked;
+            var baseFare = 300;
+            if(classType === "first class"){
+                baseFare += 500;
+            } else if (classType === "business"){
+                baseFare += 200;
+            }
+            if(luggage > 20){
+                baseFare += ((luggage - 20)/10)*50;
+            }
+            if(student){
+                baseFare *= 0.85;
+            } else if (senior){
+                baseFare *= 0.9;
+            }
+            document.getElementById('output').innerHTML = `$${baseFare}`;
+        }
+    </script>
+</body>
+</html>

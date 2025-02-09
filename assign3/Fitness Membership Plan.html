@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Membership Plan</title>
+</head>
+<body>
+    <h2>Fitness Membership Plan</h2>
+    <label for="gym">Gym</label>
+    <input type="checkbox" id="gym" name="gym" checked required>
+    <br><br>
+    <label for="trainer">Trainer Needed </label>
+    <input type="checkbox" id="trainer" name="trainer">
+    <br><br>
+    <label for="diet">Diet Needed</label>
+    <input type="checkbox" id="diet" name="diet">
+    <br><br>
+    <button onclick="choosePlan()">Get Best plan</button>
+    <h3>Best Plan that suits you is:</h3>
+    <p id="output"></p>
+    <script>
+        function choosePlan() {
+            let trainer = document.getElementById("trainer").checked;
+            let diet = document.getElementById("diet").checked;
+            let plan = '';
+            if(trainer && diet){
+                plan = 'VIP ($80/month)';
+            } else if (trainer){
+                plan = 'Premium ($50/month)';
+            } else {
+                plan = 'Basic ($20/month)';
+            }
+            document.getElementById('output').innerHTML = `${plan}`;
+        }
+    </script>
+</body>
+</html>

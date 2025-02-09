@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electricity Bill Calculation</title>
+</head>
+<body>
+    <h3>Electricity Bill Calculation</h3>
+    <label for="consumption">Enter consumption in  units</label>
+    <input type="number" id="consumption" name="consumption" required>
+    <br><br>
+    <label for="time">Enter time in 24hrs format</label>
+    <input type="number" id="time" name="time" required>
+    <br><br>
+    <button onclick="calculateElectricityBill()">total bill</button>
+    <h3>Total Bill: </h3>
+    <p id="output"></p>
+    <script>
+        function calculateElectricityBill() {
+            let consumption = document.getElementById("consumption").value; //in units
+            let time = document.getElementById("time").value;
+            let bill = 0;
+            if(time > 8 && time < 20){ //8am to 8pm
+                if(consumption < 100){
+                bill = consumption * 5;
+            } else if (consumption >100 && consumption < 300){
+                bill =consumption  * 4;
+            } else{
+                bill = consumption * 3;
+            }
+        }
+            else {
+                if(consumption < 100){
+                bill = consumption * 5;
+            } else if (consumption >100 && consumption < 300){
+                bill =consumption  * 4;
+            } else if (consumption >= 300){
+                bill = consumption * 3;
+            }
+            bill += bill * 0.1; //10% extra charge
+            }
+            document.getElementById('output').innerHTML = `${bill}`;
+        }
+    </script>
+</body>
+</html>
+
+<!-- function calculateElectricityBill(consumption,time){
+    let bill;
+    if(consumption < 100){
+        rate = 5;
+    } else if (units >= 100 && units < 300) {
+        rate = 4;
+    } else {
+        rate = 3;
+    }
+    if (timeOfDay >= 20 || timeOfDay < 8) {
+        bill += bill * 0.1; // 10% surcharge
+    }
+
+    return bill.toFixed(2); // Return formatted bill amount
+} -->

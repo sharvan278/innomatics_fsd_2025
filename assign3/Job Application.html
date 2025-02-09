@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Application</title>
+</head>
+<body>
+    <h2>Job Application</h2>
+    <label for="age">Enter your age: </label>
+    <input type="number" id="age" name="age">
+    <br><br>
+    <label for="exp">Years of Experience: </label>
+    <input type="number" id="exp" name="exp">
+    <br><br>
+    <label for="qualification">Enter Qualification: </label>
+    <input type="text" id="qualification" name="qualification">
+    <br><br>
+    <button onclick="isEligibleForJob()">Check Eligibility</button>
+    <h3>Eligibility Status: </h3>
+    <p id="output"></p>
+    <script>
+        function isEligibleForJob() {
+            let age = parseInt(document.getElementById("age").value);
+            let exp = parseInt(document.getElementById("exp").value);
+            let qualification = document.getElementById("qualification").value;
+            let status = '';
+            if(qualification == 'Bachelors Degree' || qualification === "masters degree"){
+                if(age > 21 && age <= 55 && exp >= 2){
+                    status = 'Eligible';
+                } else {
+                    status = 'Not Eligible';
+                }
+            }else{
+                status = 'Not Eligible';
+            }
+            document.getElementById('output').innerHTML = `${status}`;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce Coupon Redemption</title>
+</head>
+<body>
+    <h2>E-commerce Coupon Redemption</h2>
+    <label for="total">Enter Order amount: </label>
+    <input type="number" id="total" name="total">
+    <br><br>
+    <label for="coupon">Enter Coupon Code: </label>
+    <input type="text" id="coupon" name="coupon">
+    <br><br>
+    <button onclick="applyCoupon()">Cal Final Price</button>
+    <h3>Final Price after discount: </h3>
+    <p id="output"></p>
+    <script>
+        function applyCoupon() {
+            let total = parseInt(document.getElementById("total").value);
+            let coupon = document.getElementById("coupon").value;
+            let shipping = 50;
+            let discount = 0;
+            let finalPrice = 0;
+            if(total > 500 && coupon === "DISCOUNT10"){
+                discount = 0.1;
+                shipping = 0;
+            } else if (total >200 && coupon == "FREESHIP"){
+                shipping = 0;
+            } else{
+                shipping = 50;
+            }
+            finalPrice = total - (total * discount) + shipping;
+            document.getElementById('output').innerHTML = `$${finalPrice}`;
+        }
+        // let total = parseInt(document.getElementById("total").value);
+        // let shipping = total > 200 && document.getElementById("coupon").value === "FREESHIP" ? 0 : 50;
+        // let discount = total > 500 && document.getElementById("coupon").value === "DISCOUNT10" ? 10 : 0;
+    </script>
+</body>
+</html>

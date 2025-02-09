@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Online Shopping Discount & Free Shipping</h2>
+    <form>
+        <label for="total">Order Amount</label>
+        <input type="number" id="total" name="total" required>
+        <br>
+        <button type="button" onclick="calculateFinalAmount()">Total Amount</button>
+    </form>
+    <script>
+        function calculateFinalAmount() {
+            let total = document.getElementById('total');
+            let finalAmount = parseFloat(total.value) || 0;
+            let discount = 0;
+            let shipping = 50;
+
+            if (finalAmount >= 1000) {
+                discount = finalAmount * 0.2; // 20% discount
+            } 
+            else if (finalAmount >= 500 && finalAmount < 1000) {
+                discount = finalAmount * 0.1; // 10% discount
+            }
+            if (finalAmount > 50) {
+                shipping = 0;
+            }
+
+            finalAmount = finalAmount - discount + shipping;
+            alert(`Total Amount: ${total.value}\nDiscount: ${discount}\nShipping: ${shipping}\nFinal Amount: ${finalAmount}`);
+        }
+    </script>
+</body>
+</html>

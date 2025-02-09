@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Smart Traffic Light System</title>
+</head>
+<body>
+    <label for="traffic">Traffic Density</label>
+    <input type="text" id="traffic" name="traffic" placeholder="Enter traffic density" required>
+    <br><br>
+    <button onclick="trafficLightControl()">Display Signal</button>
+    <h3>green signal will stay on for: </h3>
+    <p id="output"></p>
+    <script>
+        function trafficLightControl(){
+            var traffic = document.getElementById("traffic").value;
+            var signal = '';
+            if(traffic == "Heavy Traffic"){
+                signal = '60 sec'
+        } else if (traffic == "Moderate Traffic"){
+            signal = '40 sec'
+        } else if (traffic == "Low Traffic"){
+            signal = '20 sec'
+        } else {
+            signal = 'Invalid Input'
+        }
+        // alert(`Signal: ${signal}`);
+        document.getElementById('output').innerHTML = `${signal}`;
+    }
+    </script>
+</body>
+</html>

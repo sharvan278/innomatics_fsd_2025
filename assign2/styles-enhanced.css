@@ -1,0 +1,85 @@
+.about-section {
+    background: linear-gradient(to right, #f0e68c, #d7a86e); /* Gradient background */
+    padding: 60px 20px;
+    color: #3e2723;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
+}
+.about-content h2 {
+    font-size: 2.5rem; /* Larger heading */
+    margin-bottom: 20px;
+    text-align: center; /* Centered text */
+    transition: transform 0.3s; /* Animation on hover */
+}
+.about-content h2:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+.about-content p {
+    font-size: 1.2rem; /* Slightly larger text */
+    line-height: 1.6; /* Improved line height */
+    text-align: center; /* Centered text */
+}
+
+/* Center all headings */
+h1, h2, h3 {
+    text-align: center; /* Center all headings */
+}
+
+/* Style the Contact Us section as a card */
+.contact-section {
+    background-color: #fff; /* White background for card effect */
+    color: #3e2723; /* Dark text for contrast */
+    border-radius: 10px; /* Rounded corners */
+    padding: 40px; /* Adjusted padding */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
+    margin-top: 20px; /* Space above the contact section */
+}
+
+.contact-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center align items */
+}
+
+input,
+textarea {
+    margin-bottom: 15px; /* Increased margin */
+    padding: 15px; /* Increased padding */
+    border: 1px solid #fff; /* White border */
+    border-radius: 5px;
+    font-size: 1rem; /* Larger font size */
+    width: 100%; /* Full width */
+    max-width: 400px; /* Limit max width */
+}
+
+button {
+    padding: 15px; /* Increased padding */
+    background-color: #6d4c41;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+button:hover {
+    background-color: #5b3e33; /* Darker shade on hover */
+}
+
+/* Add icons to input fields */
+input::placeholder,
+textarea::placeholder {
+    color: #fff; /* Placeholder color */
+    opacity: 0.8; /* Slightly transparent */
+}
+
+/* Center footer information */
+footer {
+    text-align: center; /* Center the footer text */
+    padding: 20px; /* Padding inside the footer */
+    background-color: #6d4c41; /* Footer background color */
+    color: #fff; /* White text for contrast */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    margin-top: 20px; /* Space above the footer */
+}
